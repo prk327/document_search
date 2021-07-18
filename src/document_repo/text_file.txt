@@ -1,0 +1,7 @@
+The yum command is the primary tool for getting, installing, deleting, querying, and otherwise managing Red Hat Enterprise Linux RPM software packages from official Red Hat software repositories, as well as other third-party repositories
+
+YUM Yellowdog Updater, Modified
+
+APK Alpine
+
+Ubuntue : apt
