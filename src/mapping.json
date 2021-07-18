@@ -1,0 +1,82 @@
+{
+  "settings": {
+    "analysis": {
+      "analyzer": {
+        "autocomplete_analyzer": {
+          "tokenizer": "edge_gram_tokenizer",
+          "filter": ["lowercase"]
+        }
+      },
+      "autocomplete_search_analyzer" : {
+        "tokenizer" : "keyword",
+        "filter" : ["lowercase"]
+      },
+      "tokenizer": {
+        "edge_gram_tokenizer": {
+          "type": "edge_ngram",
+          "min_gram": 2,
+          "max_gram": 20,
+          "token_chars": ["letter", "digit","whitespace"]
+        }
+      }
+    },
+    "index.mapping.total_fields.limit": 100
+  },
+  "mappings": {
+    "properties": {
+      "content": {
+        "type": "text"
+      },
+      "doc_id": {
+        "type": "long"
+      },
+      "document_created_dt": {
+        "type": "date",
+         "format": "yyyy-MM-dd HH:mm:ss||yyyy-MM-dd",
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 256
+          }
+        }
+      },
+      "documnet_modified_dt": {
+        "type": "date",
+        "format": "yyyy-MM-dd HH:mm:ss||yyyy-MM-dd",
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 256
+          }
+        }
+      },
+      "file_size": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 256
+          }
+        }
+      },
+      "file_type": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 256
+          }
+        }
+      },
+      "file_name": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 256
+          }
+        }
+        }
+    }
+  }
+}

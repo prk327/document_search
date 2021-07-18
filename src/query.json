@@ -1,0 +1,48 @@
+{
+  "from": 0,
+  "size": 1000,
+  "min_score": 0.5,
+  "_source": ["file_name","content"],
+  "query": {
+    "bool": {
+      "filter": [],
+      "should": [
+        {
+          "match_phrase": {
+            "content": "linus sortbare"
+          }
+        },
+        {
+          "match": {
+            "content": {
+              "query": "linus sortbare",
+              "fuzziness": "AUTO"
+            }
+          }
+        },
+        {
+          "match": {
+            "content": {
+              "query": "linus sortbare",
+              "fuzziness": "AUTO",
+              "operator": "and"
+            }
+          }
+        }
+      ],
+      "minimum_should_match": 1
+    }
+  },
+  "sort":[
+    {
+      "_score":{
+        "order":"desc"
+      }
+    }
+  ],
+  "highlight": {
+    "fields": {
+      "content": {}
+    }
+  }
+}

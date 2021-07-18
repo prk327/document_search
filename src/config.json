@@ -1,0 +1,20 @@
+{
+  "elasticsearch": {
+    "host": "es01",
+    "port": 9200,
+    "username": "elastic",
+    "password": "changeme"
+  },
+  "save_config":{
+    "es_index": "smartsearch"
+  },
+  "search_config": {
+    "wildcard_list" : ["?","+","*","^"]
+  },
+  "flask_server_config": {
+    "port": "5000",
+    "n_threads": 10
+  },
+  "supported_documents" : ["pdf","txt","doc","docx"],
+  "documents_repository_url": ""
+}
